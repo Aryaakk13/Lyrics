@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCII Music Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main id="stage">
+    <!-- ASCII art dirender di sini oleh js/ascii.js (sumbernya bisa foto ATAU video, tergantung mode) -->
+    <pre id="ascii-canvas" aria-hidden="true"></pre>
+
+    <!-- Baris lirik, muncul di sisi kiri layar -->
+    <div id="lyric-text-layer">
+      <p id="lyric-text"></p>
+    </div>
+
+    <!-- Overlay tombol play, wajib karena browser butuh interaksi user sebelum audio bisa jalan -->
+    <div id="start-overlay">
+      <button id="start-btn">▶ Putar</button>
+      <p class="hint">Klik untuk mulai lagu &amp; visualizer</p>
+    </div>
+
+    <div id="hud">
+      <span id="time-display">00:00 / 00:00</span>
+    </div>
+  </main>
+
+  <audio id="song" preload="auto"></audio>
+
+  <script src="js/config.js"></script>
+  <script src="js/ascii.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ascii-font.js"></script>
+  <script src="js/lyric-overlay.js"></script>
+  <script src="js/video-moments.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
